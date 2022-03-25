@@ -18,6 +18,12 @@ export default {
       title: 'Title',
     },
     {
+      name: 'subTitle',
+      type: 'string',
+      title: 'Sub Title',
+    },
+    
+    {
       name: 'content',
       type: 'array',
       title: 'Page sections',
@@ -25,7 +31,8 @@ export default {
         { type: 'hero' },
         { type: 'imageSection' },
         { type: 'mailchimp' },
-        { type: 'textSection' },
+        { type: 'textSection' }, 
+        { type: 'selectBox' },    
       ],
     },
     {
