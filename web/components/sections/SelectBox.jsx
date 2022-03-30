@@ -37,16 +37,16 @@ export default function SelectBox(props) {
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify({
-        name: count.current.querySelector('#name').value,
-        lastName: count.current.querySelector('#surname').value,
-        age: count.current.querySelector('#age').value,
+        name: count.current.querySelector('#name')?.value,
+        lastName: count.current.querySelector('#surname')?.value,
+        age: count.current.querySelector('#age')?.value,
       })
     }).then(res => res.text()).then(res => console.log("res", res))
     let copiedData = [...data]
     copiedData.push({
-      name: count.current.querySelector('#name').value,
-      lastName: count.current.querySelector('#surname').value,
-      age: count.current.querySelector('#age').value,
+      name: count.current.querySelector('#name')?.value,
+      lastName: count.current.querySelector('#surname')?.value,
+      age: count.current.querySelector('#age')?.value,
     })
 
     console.log("test 4444", count, count.current.querySelector('#name'))
