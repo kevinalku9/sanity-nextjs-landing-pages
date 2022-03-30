@@ -4,6 +4,7 @@ import client from '../client'
 import '../styles/shared.module.css'
 import '../styles/layout.css'
 import '../styles/custom-properties.css'
+import '../components/sections/selectBox.css'
 
 const siteConfigQuery = `
   *[_id == "global-config"] {

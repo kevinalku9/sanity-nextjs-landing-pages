@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  /* max-width: var(--width-small); */
+  padding: 0 1.5em;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  margin: 0 auto;
+}
+
+.inputList {
+  display: flex;
+}
+
+.formWrapper {
+  overflow-x: auto;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.textArea {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+table tr,
+table th,
+table td {
+  display: flex;
+}
+
+table th,
+table td {
+  width: 153px;
+}
