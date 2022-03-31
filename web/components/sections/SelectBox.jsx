@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactHTMLTableToExcel from 'react-html-table-to-excel'
+// import DownloadTableExcel from 'react-export-table-to-excel'
 import jason from '../../data/dataJson.json'
+
 
 const { useEffect, useRef, useState } = React;
 
@@ -8,9 +10,11 @@ export default function SelectBox(props) {
   console.log('selectbox', props)
   const [data, setData] = useState([])
   const count = useRef(null);
+  const choiceElement = useRef(null);
+  const choiceQuantity = useRef(null);
+
 
   const { heading } = props;
-
   useEffect(() => {
     console.log("test", jason.data);
     setData(jason.data)
@@ -23,11 +27,142 @@ export default function SelectBox(props) {
     console.log("test 2", count);
     document.addEventListener('click', click)
 
+
     return () => {
       document.removeEventListener('click', click)
-      document.querySelector
+      choiceElement.current.addEventListener("change", () => {
+        // e.current.value;
+        if (choiceElement.current.value === "single") {
+          choiceQuantity.current.classList.add("disabled");
+          console.log("disabled");
+        } else {
+          choiceQuantity.current.classList.remove("disabled");
+          console.log("enabled");
+        }
+      })
     }
   })
+
+  const filterElements = () => {
+    let myStaticData = {
+      name: 'name',
+      lastName: 'lastname',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+      age: 'age',
+    }
+    let staticData = [...data];
+    let quantity = choiceQuantity.current.value;
+
+    if (choiceElement.current.value === "single") {
+      // console.log("trueeee valuee", staticData);
+      staticData.push(myStaticData)
+      setData(staticData)
+      fetch('api/modJson', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify(myStaticData)
+      })
+    } else {
+      for (let i = 0; i < quantity; i++) {
+        staticData.push(myStaticData)
+        fetch('api/modJson', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: JSON.stringify(myStaticData)
+        })
+      }
+      setData(staticData)
+    }
+  }
+
 
   const addData = () => {
     fetch('api/modJson', {
@@ -43,6 +178,7 @@ export default function SelectBox(props) {
       })
     }).then(res => res.text()).then(res => console.log("res", res))
     let copiedData = [...data]
+
     copiedData.push({
       name: count.current.querySelector('#name')?.value,
       lastName: count.current.querySelector('#surname')?.value,
@@ -54,8 +190,28 @@ export default function SelectBox(props) {
     setData(copiedData)
   }
 
+
   return (
     <div className={`formWrapper`}>
+      <select name="choose-elements" id="" ref={choiceElement}>
+        <option value="single">Single element</option>
+        <option value="multiple">Multiple elements</option>
+      </select>
+      <select name="choose-number" ref={choiceQuantity} className={"disabled"} id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <button className='filter-elements' onClick={() => filterElements()}>
+        Submit Filter
+      </button>
       <div className={`form-input`} ref={count}>
         <div className={`inputList`}>
           <input className="textArea" id='name' type="text" placeholder="First name"></input>
@@ -167,12 +323,12 @@ export default function SelectBox(props) {
         <tr>
           <th>Firstname</th>
           <th>Lastname</th>
-          <th>Age</th>
-          <th>Age</th>
-          <th>Age</th>
-          <th>Age</th>
-          <th>Age</th>
-          <th>Age</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
           <th>Age</th>
           <th>Age</th>
           <th>Age</th>

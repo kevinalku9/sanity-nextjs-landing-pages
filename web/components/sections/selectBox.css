@@ -24,6 +24,11 @@
   padding-right: 3px;
 }
 
+select.disabled {
+  pointer-events: none;
+  opacity: .5;
+}
+
 table tr,
 table th,
 table td {
