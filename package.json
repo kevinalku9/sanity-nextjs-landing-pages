@@ -20,8 +20,6 @@
   "dependencies": {
     "fs": "^0.0.1-security",
     "fs-react": "^0.0.4",
-    "react-export-excel": "^0.5.3",
-    "react-export-table-to-excel": "^1.0.3",
     "react-html-table-to-excel": "^2.0.0",
     "write-json-file": "^5.0.0"
   }
