@@ -46,7 +46,7 @@ export default function SelectBox(props) {
       urlSettings: 'On',
       campaignID: '',
       campaignStatus: 'On',
-      campaignName: '',
+      campaignName: 'Campaign Name',
       adsObjective: 'Traffic',
       budgetType: 'Daily',
       budgetAmount: '50',
@@ -121,7 +121,7 @@ export default function SelectBox(props) {
       identityType: 'Custom Identity',
       identityID: 'id:7076498150044106754',
       imageName: '',
-      videoName: '',
+      videoName: 'Tokcar2.mp4',
       postID: '',
       instantFormID: '',
       text: 'For testing Seniors',
@@ -186,7 +186,7 @@ export default function SelectBox(props) {
         adGroupStatus: count.current.querySelector('#adGroupStatus')?.value,
         adGroupName: count.current.querySelector('#adGroupName')?.value,
         placementTypes: count.current.querySelector('#placementTypes')?.value,
-        placements: count.current.querySelector('#placement')?.value,
+        placements: count.current.querySelector('#placements')?.value,
         blockList: count.current.querySelector('#blockList')?.value,
         promotionType: count.current.querySelector('#promotionType')?.value,
         webUrl: count.current.querySelector('#webUrl')?.value,
@@ -281,7 +281,7 @@ export default function SelectBox(props) {
       adGroupStatus: count.current.querySelector('#adGroupStatus')?.value,
       adGroupName: count.current.querySelector('#adGroupName')?.value,
       placementTypes: count.current.querySelector('#placementTypes')?.value,
-      placements: count.current.querySelector('#placement')?.value,
+      placements: count.current.querySelector('#placements')?.value,
       blockList: count.current.querySelector('#blockList')?.value,
       promotionType: count.current.querySelector('#promotionType')?.value,
       webUrl: count.current.querySelector('#webUrl')?.value,
@@ -399,7 +399,7 @@ export default function SelectBox(props) {
           <input className="textArea" id="adGroupStatus" type="text" placeholder="adGroupStatus"></input>
           <input className="textArea" id="adGroupName" type="text" placeholder="adGroupName"></input>
           <input className="textArea" id="placementTypes" type="text" placeholder="placementTypes"></input>
-          <input className="textArea" id="placement" type="text" placeholder="placement"></input>
+          <input className="textArea" id="placements" type="text" placeholder="placements"></input>
           <input className="textArea" id="blockList" type="text" placeholder="blockList"></input>
           <input className="textArea" id="promotionType" type="text" placeholder="promotionType"></input>
           <input className="textArea" id="webUrl" type="text" placeholder="webUrl"></input>
@@ -584,93 +584,94 @@ export default function SelectBox(props) {
         </tr>
         {data.map((item, idx) => (
           <tr key={idx}>
-            <td id="name"> {item.ios} </td>
-            <td id="surname">{item.urlSettings}</td>
-            <td id="age">{item.campaignID}</td>
-            <td id="age">{item.campaignStatus}</td>
-            <td id="age">{item.campaignName}</td>
-            <td id="age">{item.adsObjective}</td>
-            <td id="age">{item.budgetType}</td>
-            <td id="age">{item.budgetAmount}</td>
-            <td id="age">{item.budgetOptimization}</td>
-            <td id="age">{item.campaignBidStrategy}</td>
-            <td id="age">{item.campaignDelievery}</td>
-            <td id="age">{item.adGroupID}</td>
-            <td id="age">{item.adGroupStatus}</td>
-            <td id="age">{item.adGroupName}</td>
-            <td id="age">{item.placementTypes}</td>
-            <td id="age">{item.placement}</td>
-            <td id="age">{item.blockList}</td>
-            <td id="age">{item.promotionType}</td>
-            <td id="age">{item.webUrl}</td>
-            <td id="age">{item.fallbackType}</td>
-            <td id="age">{item.fallbackWebsite}</td>
-            <td id="age">{item.tikTokPixelID}</td>
-            <td id="age">{item.pixelEvent}</td>
-            <td id="age">{item.appID}</td>
-            <td id="age">{item.displayName}</td>
-            <td id="age">{item.profileImage}</td>
-            <td id="age">{item.userComments}</td>
-            <td id="age">{item.videoDownload}</td>
-            <td id="age">{item.automatedCreativeOpt}</td>
-            <td id="age">{item.targetingMode}</td>
-            <td id="age">{item.retargetUsers}</td>
-            <td id="age">{item.audienceType}</td>
-            <td id="age">{item.includeAudienceBehavior}</td>
-            <td id="age">{item.excludeAudienceBehavior}</td>
-            <td id="age">{item.includeAudienceID}</td>
-            <td id="age">{item.excludeAudienceID}</td>
-            <td id="age">{item.location}</td>
-            <td id="age">{item.gender}</td>
+            <td id="ios"> {item.ios} </td>
+            <td id="urlSettings">{item.urlSettings}</td>
+            <td id="campaignID">{item.campaignID}</td>
+            <td id="campaignStatus">{item.campaignStatus}</td>
+            <td id="campaignName">{item.campaignName}</td>
+            <td id="adsObjective">{item.adsObjective}</td>
+            <td id="budgetType">{item.budgetType}</td>
+            <td id="budgetAmount">{item.budgetAmount}</td>
+            <td id="budgetOptimization">{item.budgetOptimization}</td>
+            <td id="campaignBidStrategy">{item.campaignBidStrategy}</td>
+            <td id="campaignDelievery">{item.campaignDelievery}</td>
+            <td id="adGroupID">{item.adGroupID}</td>
+            <td id="adGroupStatus">{item.adGroupStatus}</td>
+            <td id="adGroupName">{item.adGroupName}</td>
+            <td id="placementTypes">{item.placementTypes}</td>
+            <td id="placements">{item.placements}</td>
+            <td id="blockList">{item.blockList}</td>
+            <td id="promotionType">{item.promotionType}</td>
+            <td id="webUrl">{item.webUrl}</td>
+            <td id="fallbackType">{item.fallbackType}</td>
+            <td id="fallbackWebsite">{item.fallbackWebsite}</td>
+            <td id="tikTokPixelID">{item.tikTokPixelID}</td>
+            <td id="pixelEvent">{item.pixelEvent}</td>
+            <td id="appID">{item.appID}</td>
+            <td id="displayName">{item.displayName}</td>
+            <td id="profileImage">{item.profileImage}</td>
+            <td id="userComments">{item.userComments}</td>
+            <td id="videoDownload">{item.videoDownload}</td>
+            <td id="automatedCreativeOpt">{item.automatedCreativeOpt}</td>
+            <td id="targetingMode">{item.targetingMode}</td>
+            <td id="retargetUsers">{item.retargetUsers}</td>
+            <td id="audienceType">{item.audienceType}</td>
+            <td id="includeAudienceBehavior">{item.includeAudienceBehavior}</td>
+            <td id="excludeAudienceBehavior">{item.excludeAudienceBehavior}</td>
+            <td id="includeAudienceID">{item.includeAudienceID}</td>
+            <td id="excludeAudienceID">{item.excludeAudienceID}</td>
+            <td id="location">{item.location}</td>
+            <td id="gender">{item.gender}</td>
             <td id="age">{item.age}</td>
-            <td id="age">{item.languages}</td>
-            <td id="age">{item.interestCategories}</td>
-            <td id="age">{item.behaviorCategories}</td>
-            <td id="age">{item.videoRelated}</td>
-            <td id="age">{item.timeBehavior}</td>
-            <td id="age">{item.creatorGategories}</td>
-            <td id="age">{item.creatorRelatedActions}</td>
-            <td id="age">{item.operatingSystem}</td>
-            <td id="age">{item.connectionType}</td>
-            <td id="age">{item.carriers}</td>
-            <td id="age">{item.devicePrice}</td>
-            <td id="age">{item.osVersions}</td>
-            <td id="age">{item.targetingExpansion}</td>
-            <td id="age">{item.targetingSettings}</td>
-            <td id="age">{item.adGroupBudgetType}</td>
-            <td id="age">{item.adGroupBudgetAmount}</td>
-            <td id="age">{item.startTime}</td>
-            <td id="age">{item.endTime}</td>
-            <td id="age">{item.dayparting}</td>
-            <td id="age">{item.optimizationGoal}</td>
-            <td id="age">{item.appEvent}</td>
-            <td id="age">{item.secondatyGoal}</td>
-            <td id="age">{item.billingMethod}</td>
-            <td id="age">{item.frequencyCap}</td>
-            <td id="age">{item.bidStrategy}</td>
-            <td id="age">{item.optPreference}</td>
-            <td id="age">{item.bidForOCPC}</td>
-            <td id="age">{item.bidForSecondary}</td>
-            <td id="age">{item.delieveryType}</td>
-            <td id="age">{item.impressionTrackingURL}</td>
-            <td id="age">{item.clickTrackingURL}</td>
-            <td id="age">{item.adID}</td>
-            <td id="age">{item.adStatus}</td>
-            <td id="age">{item.adName}</td>
-            <td id="age">{item.useTikTokAccount}</td>
-            <td id="age">{item.identityType}</td>
-            <td id="age">{item.identityID}</td>
-            <td id="age">{item.imageName}</td>
-            <td id="age">{item.videoName}</td>
-            <td id="age">{item.postID}</td>
-            <td id="age">{item.instantFormID}</td>
-            <td id="age">{item.text}</td>
-            <td id="age">{item.callToAction}</td>
-            <td id="age">{item.playableID}</td>
-            <td id="age">{item.autoAdImage}</td>
-            <td id="age">{item.autoAdVideo}</td>
-            <td id="age">{item.autoAdText}</td>
-            <td id="age">{item.autoAdCallToAction}</td>
+            <td id="languages">{item.languages}</td>
+            <td id="interestCategories">{item.interestCategories}</td>
+            <td id="behaviorCategories">{item.behaviorCategories}</td>
+            <td id="videoRelated">{item.videoRelated}</td>
+            <td id="timeBehavior">{item.timeBehavior}</td>
+            <td id="creatorGategories">{item.creatorGategories}</td>
+            <td id="creatorRelatedActions">{item.creatorRelatedActions}</td>
+            <td id="operatingSystem">{item.operatingSystem}</td>
+            <td id="connectionType">{item.connectionType}</td>
+            <td id="carriers">{item.carriers}</td>
+            <td id="devicePrice">{item.devicePrice}</td>
+            <td id="osVersions">{item.osVersions}</td>
+            <td id="targetingExpansion">{item.targetingExpansion}</td>
+            <td id="targetingSettings">{item.targetingSettings}</td>
+            <td id="adGroupBudgetType">{item.adGroupBudgetType}</td>
+            <td id="adGroupBudgetAmount">{item.adGroupBudgetAmount}</td>
+            <td id="startTime">{item.startTime}</td>
+            <td id="endTime">{item.endTime}</td>
+            <td id="dayparting">{item.dayparting}</td>
+            <td id="optimizationGoal">{item.optimizationGoal}</td>
+            <td id="appEvent">{item.appEvent}</td>
+            <td id="secondatyGoal">{item.secondatyGoal}</td>
+            <td id="billingMethod">{item.billingMethod}</td>
+            <td id="frequencyCap">{item.frequencyCap}</td>
+            <td id="bidStrategy">{item.bidStrategy}</td>
+            <td id="optPreference">{item.optPreference}</td>
+            <td id="bid">{item.bid}</td>
+            <td id="bidForOCPC">{item.bidForOCPC}</td>
+            <td id="bidForSecondary">{item.bidForSecondary}</td>
+            <td id="delieveryType">{item.delieveryType}</td>
+            <td id="impressionTrackingURL">{item.impressionTrackingURL}</td>
+            <td id="clickTrackingURL">{item.clickTrackingURL}</td>
+            <td id="adID">{item.adID}</td>
+            <td id="adStatus">{item.adStatus}</td>
+            <td id="adName">{item.adName}</td>
+            <td id="useTikTokAccount">{item.useTikTokAccount}</td>
+            <td id="identityType">{item.identityType}</td>
+            <td id="identityID">{item.identityID}</td>
+            <td id="imageName">{item.imageName}</td>
+            <td id="videoName">{item.videoName}</td>
+            <td id="postID">{item.postID}</td>
+            <td id="instantFormID">{item.instantFormID}</td>
+            <td id="text">{item.text}</td>
+            <td id="callToAction">{item.callToAction}</td>
+            <td id="playableID">{item.playableID}</td>
+            <td id="autoAdImage">{item.autoAdImage}</td>
+            <td id="autoAdVideo">{item.autoAdVideo}</td>
+            <td id="autoAdText">{item.autoAdText}</td>
+            <td id="autoAdCallToAction">{item.autoAdCallToAction}</td>
           </tr>
         ))}
         {/* <tr>
