@@ -22,6 +22,7 @@
 .textArea {
   padding-left: 3px;
   padding-right: 3px;
+  width: 145px;
 }
 
 select.disabled {
@@ -33,6 +34,7 @@ table tr,
 table th,
 table td {
   display: flex;
+  text-align: left;
 }
 
 table th,
